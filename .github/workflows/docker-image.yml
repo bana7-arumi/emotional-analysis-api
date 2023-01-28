@@ -28,6 +28,10 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./docker/cpu
           push: true
-          tags: bana7/japanese-emotional-analysis-api:latest
+          tags: bana7/japanese-emotional-analysis-api:cpu
+        with:
+          context: ./docker/gpu
+          push: true
+          tags: bana7/japanese-emotional-analysis-api:gpu
