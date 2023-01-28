@@ -67,6 +67,25 @@ $ ./model-install.sh
 
 ## Build
 
+To use a pre-built docker image, do the following
+
+need to change the build context in docker-compose.XXX.yml
+
+XXX is cpu or gpu
+
+```diff
+version: "3"
+
+services:
+  api:
+-    build:
+-      context: .
+-      dockerfile: ./docker/XXX/Dockerfile
++    image: bana7/japanese-emotional-analysis-api:XXX
+```
+
+[Click here](https://hub.docker.com/repository/docker/bana7/japanese-emotional-analysis-api/general) for more information about docker images.
+
 In BUILD, install the following Python libraries and create a Docker image.
 
 - torch
