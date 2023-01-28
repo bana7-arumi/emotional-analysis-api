@@ -34,10 +34,10 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/japanese-emotional-analysis-api:cpu
       -
-        context: .
         name: GPU image build and push
         uses: docker/build-push-action@v2
         with:
+          context: .
           file: ./docker/gpu/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
