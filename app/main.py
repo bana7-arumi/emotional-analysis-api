@@ -9,7 +9,7 @@ class Post(BaseModel):
 app = FastAPI()
 
 @app.get("/", response_class=ORJSONResponse)
-def index():
+async def index():
     return ORJSONResponse({
         "Hello": "World!"
     })
