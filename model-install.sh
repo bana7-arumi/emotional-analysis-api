@@ -10,12 +10,6 @@ function curl_gdrive_download () {
 GDRIVE_MODEL_FILE_ID='18H0SU7xcVxVsTniXbiVBeBJoS62WAoXb'
 MODEL_NAME='EmotionAnalysisModel'
 
-FIND_PROJECT=${find ../emotional-analysis-api/app/}
-if [ -z "$FIND_PROJECT" ]; then
-  echo "[ERROR] Project 'emotional-analysis-api' is not found."
-  exit 1
-fi
-
 FIND_MODEL=$(find ../emotional-analysis-api/app/${MODEL_NAME})
 if [ -n "$FIND_MODEL" ]; then
   echo "[ERROR] ${MODEL_NAME} is exist"
